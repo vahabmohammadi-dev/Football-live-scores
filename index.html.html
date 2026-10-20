@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/asset/css/style.css">
+<title> ساکرفا| مرجع مسابقات ورزشی</title>
+ <link rel="icon" type="image/x-icon" href="/asset/img/vector.svg">
+
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon"><img src="/asset/img/logo-removebg-preview.png" alt=""></span>
+      <span class="logo-text">ساکرفا | پخش نتایج زنده مسابقات ورزشی</span>
+    </div>
+    <nav class="main-nav">
+      <a href="#matches" class="active">نتایج</a>
+      <a href="#voting">رای‌گیری</a>
+      <a href="#hall">مشاهیر</a>
+      <a href="#slider">گالری</a>
+    </nav>
+    <div class="auth-box">
+      <span id="userInfo"></span>
+      <button class="btn-login" id="loginBtn">ورود / ثبت‌نام</button>
+      <button class="btn-logout" id="logoutBtn">خروج</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- تبلیغات چپ -->
+  <aside class="ads">
+    <div class="ad-box">🎯 تبلیغات شما<small>اینجا کلیک کنید</small></div>
+    <div class="ad-box">🔥 تخفیف ویژه<small>کد: GOAL20</small></div>
+    <div class="ad-box">📱 اپلیکیشن ما<small>دانلود رایگان</small></div>
+  </aside>
+
+  <main class="main-content">
+    <!-- فیلترها -->
+    <section class="card-box">
+      <h2 class="section-title">🏆 نتایج لیگ‌های جهان</h2>
+      <div class="league-filters" id="leagueFilters"></div>
+    </section>
+
+    <!-- نتایج زنده -->
+    <section class="card-box" id="liveSection" style="display:none;">
+      <h2 class="section-title">🔴 نتایج زنده <span style="font-size:.7rem;background:#e74c3c;color:#fff;padding:3px 8px;border-radius:10px;">LIVE</span></h2>
+      <div class="matches-container" id="liveContainer"></div>
+    </section>
+
+    <!-- همه مسابقات -->
+    <section id="matches">
+      <div class="matches-container" id="matchesContainer"></div>
+    </section>
+
+    <div class="print-section">
+      <button class="btn-print" onclick="window.print()">🖨️ چاپ نتایج</button>
+    </div>
+
+    <!-- رای‌گیری -->
+    <section class="card-box" id="voting">
+      <h2 class="section-title">🗳️ به تیم محبوبت رای بده</h2>
+      <div class="votes-list" id="votesList"></div>
+    </section>
+
+    <!-- تالار مشاهیر -->
+    <section class="card-box" id="hall">
+      <h2 class="section-title">🏅 تالار مشاهیر فوتبال</h2>
+      <div class="votes-list" id="hallList"></div>
+    </section>
+
+    <!-- اسلایدر -->
+    <section class="card-box" id="slider">
+      <h2 class="section-title">📸 گالری تصاویر</h2>
+      <div class="slider">
+        <button class="slider-btn prev" id="prevBtn">‹</button>
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide" style="background:linear-gradient(135deg,#1e3c72,#2a5298)">🏟️ ورزشگاه‌های جهان</div>
+          <div class="slide" style="background:linear-gradient(135deg,#c31432,#240b36)">⚽ گل‌های برتر</div>
+          <div class="slide" style="background:linear-gradient(135deg,#11998e,#38ef7d)">🏆 لحظه‌های قهرمانی</div>
+          <div class="slide" style="background:linear-gradient(135deg,#fc4a1a,#f7b733)">🎉 جشن قهرمانی</div>
+          <div class="slide" style="background:linear-gradient(135deg,#4e54c8,#8f94fb)">👟 ستاره‌های فوتبال</div>
+        </div>
+        <button class="slider-btn next" id="nextBtn">›</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- تبلیغات راست -->
+  <aside class="ads">
+    <div class="ad-box">⚽ شرط‌بندی<small>۱۸+</small></div>
+    <div class="ad-box">🎽 فروشگاه لباس<small>ارسال رایگان</small></div>
+    <div class="ad-box">📺 پخش زنده<small>کیفیت HD</small></div>
+  </aside>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>⚽ گل‌زنی</h3>
+      <p>مرجع تخصصی نتایج زنده فوتبال از سراسر جهان</p>
+    </div>
+    <div class="footer-col">
+      <h4>لینک‌های سریع</h4>
+      <a href="#matches">نتایج زنده</a>
+      <a href="#hall">تالار مشاهیر</a>
+      <a href="#voting">رای‌گیری</a>
+    </div>
+    <div class="footer-col">
+      <h4>تماس با ما</h4>
+      <p>📧 info@goalzani.ir</p>
+      <p>📞 021-12345678</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 1403 ساکرفا - تمامی حقوق محفوظ است</div>
+</footer>
+
+<!-- مودال لاگین -->
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <button class="close-modal" id="closeModal">×</button>
+    <h2 id="modalTitle">ورود به حساب</h2>
+    <input type="text" id="username" placeholder="نام کاربری">
+    <input type="password" id="password" placeholder="رمز عبور">
+    <button class="btn-primary" id="submitAuth">ورود</button>
+    <p class="switch-form">
+      <span id="switchText">حساب نداری؟</span>
+      <a href="#" id="switchAuth">ثبت‌نام کن</a>
+    </p>
+    <p class="msg" id="modalMsg"></p>
+  </div>
+</div>
+
+<script src="/asset/js/main.js"></script>
+</body>
+</html>
